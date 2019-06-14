@@ -31,7 +31,7 @@ scraplinks_JM <- function(x){
   test_df2=test_df[which(!is.na(test_df$url)),]
   test_df3=test_df2[which(! test_df2$url %in% unnecessary),]
   test_df3$link=gsub("[\r\n]", " ", test_df3$link)
-  test_df3$url=paste0("https://stat.ethz.ch/pipermail/r-devel/", trans_month[1],"/",test_df3$url)
+  test_df3$url=paste0("https://stat.ethz.ch/pipermail/r-devel/", x,"/",test_df3$url)
   test_df4=test_df3 %>% 
     group_by(link) %>%
     dplyr::mutate(
